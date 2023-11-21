@@ -8,7 +8,6 @@ import com.example.demo.model.Vehicle;
 import com.example.demo.model.dto.VehicleEntity;
 import com.example.demo.model.mapper.VehicleMapper;
 import com.example.demo.service.VehicleService;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -61,7 +60,7 @@ public class VehicleController {
     }
 
     @PostMapping
-    public ResponseEntity<?> save(@Valid @RequestBody Vehicle vehicle) {
+    public ResponseEntity<?> save(@RequestBody Vehicle vehicle) {
         System.out.println("------ Vehiculo a insertar: " + vehicle);
 
         Vehicle v = service.save(vehicle);
